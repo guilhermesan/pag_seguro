@@ -37,7 +37,11 @@ module PagSeguro
     end
 
     def self.checkout_payment_url(code)
-      PagSeguro::Url.site_url("/checkout/payment.html?code=#{code}")
+      if self.pre_approval != nil && self.pre_approval.charge != nil &&  self.pre_approval.charge == auto
+        PagSeguro::Url.site_url("/request")
+      else  
+        PagSeguro::Url.site_url("/checkout/payment.html?code=#{code}")
+      end
     end
 
     def checkout_xml

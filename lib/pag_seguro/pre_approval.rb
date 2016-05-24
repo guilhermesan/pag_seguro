@@ -8,7 +8,7 @@ module PagSeguro
     DATE_RANGE = 17856.hours
 
     attr_accessor :name, :details, :amount_per_payment, :period,
-                  :day_of_week, :day_of_month, :day_of_year, :initial_date,
+                  :day_of_week, :day_of_month, :day_of_year,:charge, :initial_date,
                   :final_date, :max_amount_per_period, :max_total_amount,
                   :review_URL
 
@@ -32,6 +32,7 @@ module PagSeguro
       @day_of_week = options[:day_of_week]
       @day_of_month = options[:day_of_month]
       @day_of_year = options[:day_of_year]
+      @charge = options[:charge]
       @initial_date = options[:initial_date]
       @final_date = options[:final_date]
       @max_amount_per_period = options[:max_amount_per_period]

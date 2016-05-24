@@ -33,7 +33,7 @@ module PagSeguro
     end
 
     def self.checkout_url
-      PagSeguro::Url.api_url("/checkout")
+      PagSeguro::Url.api_url("/request")
     end
 
     def self.checkout_payment_url(code)
